@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compusoul.net | Complete Technology Solutions</title>
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary: #0056b3; /* Professional Tech Blue */
+            --secondary: #1a1a1a; /* Dark Grey */
+            --accent: #00a8cc; /* Highlights */
+            --light: #f4f7f6;
+            --text: #333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text);
+        }
+
+        /* Navigation */
+        header {
+            background: white; /* Changed to white so the black logo shows up */
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 0.5rem 0; /* Reduced padding slightly to fit logo */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Image Styling */
+        .logo img {
+            height: 60px; /* Adjusts the logo size comfortably */
+            width: auto;
+            vertical-align: middle;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: var(--secondary); /* Dark text for links against white header */
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            /* Placeholder background - replace with your own work photo later if desired */
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            color: #ddd;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+
+        /* Scope of Work Section */
+        .scope {
+            padding: 5rem 0;
+            max-width: 1200px;
+            margin: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .scope-list {
+            list-style: none;
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .scope-list li {
+            background: #fff;
+            border-left: 5px solid var(--accent);
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--secondary);
+            color: white;
+            padding: 5rem 0;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer {
+            background: #111;
+            color: #888;
+            text-align: center;
+            padding: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2rem; }
+            .container { flex-direction: column; }
+            .logo img { margin-bottom: 10px; }
+            nav ul { margin-top: 0.5rem; }
+            nav ul li { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="logo.png" alt="Compusoul Computer Solutions">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Compusoul Computer Solutions</h1>
+            <p>From PC Repair and Networking to Custom Software Development and Project Management. We handle the technology so you can handle the rest.</p>
+            <a href="#contact" class="btn">Get a Quote</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>Our Expertise</h2>
+            <p>Full-scope technology services for home and business.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>PC Upgrading & Repair</h3>
+                <p>Hardware diagnostics, component upgrades (RAM, SSD, GPU), and emergency repairs. We extend the life of your machines and optimize performance.</p>
+            </div>
+            <div class="service-card">
+                <h3>Software Development</h3>
+                <p>Custom application development tailored to your specific workflow. From database management to frontend interfaces, we build what you need.</p>
+            </div>
+            <div class="service-card">
+                <h3>Networking & Infrastructure</h3>
+                <p>Full network setup, structured cabling, Wi-Fi deployment, and security configuration. We ensure your connectivity is fast and secure.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="scope">
+        <div class="section-title">
+            <h2>Scope of Work</h2>
+            <p>We handle complex projects from start to finish.</p>
+        </div>
+        <ul class="scope-list">
+            <li><strong>Project Management:</strong> End-to-end oversight of tech rollouts.</li>
+            <li><strong>System Deployment:</strong> Large-scale OS and software installation.</li>
+            <li><strong>Data Management:</strong> Database design, backup, and recovery.</li>
+            <li><strong>IT Consulting:</strong> Strategic advice for business growth.</li>
+            <li><strong>Virus Removal:</strong> Security auditing and cleaning.</li>
+            <li><strong>Custom Builds:</strong> High-performance workstations and servers.</li>
+        </ul>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Ready to get started?</h2>
+            <p>Contact Compusoul Computer Solutions today for a consultation.</p>
+            
+            <div class="contact-info">
+                <p><strong>Email:</strong> <a href="mailto:jessie@compusoul.net">jessie@compusoul.net</a></p>
+                <p><strong>Phone:</strong> (336) 901-9563</p> 
+                <p><strong>Location:</strong> 113 Elizabeth Lane, Mebane NC 27302</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Compusoul Computer Solutions. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
